@@ -29,10 +29,14 @@ def math(num1, operation, num2):
         return f'{num1 - num2}'
     elif operation == '*':
         return f'{num1 * num2}'
-    elif operation == 'div' and not (num1 == 0 and num2 == 0):
+    elif operation == 'div':
+        if num1 == 0 and num2 == 0:
+            return '0'
         return f'{num1 / num2}' if num2 != 0 else f'{num2 / num1}'
     elif operation == '%':
-        return f'{num1 % num2}'
+        if num1 == 0 and num2 == 0:
+            return '0'
+        return f'{num1 % num2}' if num2 != 0 else f'{num2 % num1}'
     
 
 
